@@ -1,5 +1,12 @@
 # Simple Front End for Predicting Quality of Wine
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 ## 1. Setup the directory
 <img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG" class="center">
 
