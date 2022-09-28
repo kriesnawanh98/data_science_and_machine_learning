@@ -4,11 +4,11 @@
 <img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG">
 
 ## langkah 4
-<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG">
+<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture1.PNG">
 
 ## langkah 5
-<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG">
+<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture2.PNG">
 
 ## langkah 6
-<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG">
+<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture3.PNG">
 
