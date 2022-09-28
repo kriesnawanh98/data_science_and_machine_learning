@@ -8,8 +8,9 @@
 }
 
 ## 1. Setup the directory
-<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG" class="center">
-
+<p align="center">
+<img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture.PNG">
+</p>
 ## 2. Run python `.\application.py` or `flask --app application run`
 <img src="https://github.com/kriesnawanh98/data_science_and_machine_learning/blob/main/front_end_flask/Capture1.PNG">
 
