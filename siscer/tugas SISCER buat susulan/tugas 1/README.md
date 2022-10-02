@@ -43,7 +43,9 @@ numerical data based on the same measurement. For a high value of K will
 provide higher regression precision.
 
 ### 3.1 Graph of Best Fit
+
 The best model uses neighbors = 3
+
 <img src="image/KNN/KNN_nilai_neighbors_=_3 (BEST FIT).png">
 
 <img src="image/KNN/KNN_Regression_Predict (best).png">
