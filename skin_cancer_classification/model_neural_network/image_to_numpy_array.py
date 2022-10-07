@@ -21,7 +21,7 @@ print(X_train.shape)
 print(y_train.shape)
 print(X_test.shape)
 print(y_test.shape)
-print(X_train)
+print(y_train)
 
 np.savez_compressed('X_train.npz', X_train)
 np.savez_compressed('y_train.npz', y_train)

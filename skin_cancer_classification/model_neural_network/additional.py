@@ -6,6 +6,7 @@ def convert_image_to_array(path="./dataset/train/benign/",
     from PIL import Image
 
     X_train = []
+    y_train = []
     for file_name in os.listdir(path):
         data_img = Image.open(f"{path}{file_name}")
         # greyscale_data = io.grayscale(data_img)  #change from RGB to greyscale
@@ -14,12 +15,12 @@ def convert_image_to_array(path="./dataset/train/benign/",
         numpy_array.resize(224, 224, 3)
         X_train.append(numpy_array)
 
-    if label == "benign":
-        y_train = np.zeros(np.array(X_train).shape[0])
-    else:
-        y_train = np.ones(np.array(X_train).shape[0])
+        if label == "benign":
+            y_train.append(np.array([1, 0]))
+        else:
+            y_train.append(np.array([0, 1]))
 
-    return np.array(X_train), y_train
+    return np.array(X_train), np.array(y_train)
 
 
 if __name__ == '__main__':

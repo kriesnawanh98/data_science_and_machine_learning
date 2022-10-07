@@ -4,6 +4,9 @@ import matplotlib.pyplot as plt
 import numpy as np
 import tensorflow as tf
 from tensorflow.keras import layers, models
+from tensorflow.keras.preprocessing import image
+from tensorflow.keras.models import Model
+from tensorflow.keras.layers import Dense, GlobalAveragePooling2D
 
 # read npz file
 X_train = np.load('X_train.npz')
@@ -23,29 +26,30 @@ y_test = y_test['arr_0']
 print("shape of each X data = ", X_train.shape)
 
 # create model of CNN
-model = models.Sequential()
-model.add(
-    layers.Conv2D(32, (3, 3), activation='relu',
-                  input_shape=(224, 224, 3)))  # 32 filters
-model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Conv2D(64, (3, 3), activation='relu'))
-model.add(layers.MaxPooling2D((2, 2)))
-model.add(layers.Conv2D(64, (3, 3), activation='relu'))
+base_model = tf.keras.applications.nasnet.NASNetMobile(
+    input_shape=(224, 224, 3),
+    include_top=False,
+    weights='imagenet',  # using transfer learning (or None)
+    input_tensor=None,
+    pooling=None)
 
-model.add(layers.Flatten())
-model.add(layers.Dense(64, activation='relu'))
-model.add(layers.Dense(10))
+x = base_model.output
+x = GlobalAveragePooling2D()(x)
+# let's add a fully-connected layer
+x = Dense(1024, activation='relu')(x)
+predictions = Dense(2, activation='softmax')(x)
+
+model = Model(inputs=base_model.input, outputs=predictions)
 
 print("Model Summary = \n", model.summary())
 
-model.compile(
-    optimizer='adam',
-    loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-    metrics=['accuracy'])
+model.compile(optimizer=tf.keras.optimizers.Adam(learning_rate=0.01),
+              loss='binary_crossentropy',
+              metrics='accuracy')
 
 history = model.fit(X_train,
                     y_train,
-                    epochs=10,
+                    epochs=1,
                     validation_data=(X_test, y_test))
 
 pickle.dump(model, open('model_cnn_cancer_classification.pkl',
@@ -54,6 +58,7 @@ pickle.dump(model, open('model_cnn_cancer_classification.pkl',
 # plot the accuracy of the train data and on test/validation data
 plt.plot(history.history['accuracy'], label='accuracy')
 plt.plot(history.history['val_accuracy'], label='val_accuracy')
+plt.title('Accuracy VS Epoch')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
 plt.ylim([0.5, 1])
