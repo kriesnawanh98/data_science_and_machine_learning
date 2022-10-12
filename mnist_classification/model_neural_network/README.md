@@ -6,22 +6,31 @@ This CNN model is created for classifying image into 10 categories of MNIST char
 
 ## 2. CNN architecture
 - Before create the model, we should load the train and test data from .npz file. The X_train and X_test will be better if it is normalized (devided by 255.0) in the beginning. the image pixel will become 0-1 and the computation will become easier and faster.
-- the size of input image / input neural network is (224,224,3)
-- architecture of CNN:
-  - Convolutional 2D, 32 filters with size 3x3
-  - Pooling, size 2x2
-  - Convolutional 2D, 64 filters with size 3x3
-  - Pooling, size 2x2
-  - Convolutional 2D, 64 filters with size 3x3
-  - Flatten (convert 2d into 1d)
-  - Normal Neural network layer with 64 nodes
-  - last layer, with 1 node and sigmoid activation function for determine the binary class (benign/malignant)
+
+The train data will split into training and validating data as followed:
 <img src="./image/1.png">
 
-## 3. Training process
+Architecture of CNN model:
+| Layer               | Note                  | Node | num_fiter | filter shape | Activation Function |
+| ------------------- | --------------------- | ---- | --------- | ------------ | ------------------- |
+| convolutional layer | input_shape=(28,28,1) |      | 32        | 3,3          | relu                |
+| max pooling layer   |                       |      |           | 2,2          |                     |
+| convolutional layer |                       |      | 64        | 3,3          | relu                |
+| max pooling layer   |                       |      |           | 2,2          |                     |
+| convolutional layer |                       |      | 64        | 3,3          | relu                |
+| flatten layer       | convert to 1D         |      |           |              |                     |
+| Dense               |                       | 64   |           |              | relu                |
+| Dense               |                       | 10   |           |              | softmax             |
 <img src="./image/2.png">
 
-## 4. Performance
+
+
+## 3. Training process
+<img src="./image/4.png">
+
 <img src="./image/3.png">
 
-<img src="./image/4.png">
+## 4. Performance
+
+<img src="./image/5.png">
+<img src="./image/6.png">
