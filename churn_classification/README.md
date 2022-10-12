@@ -19,7 +19,7 @@ The work that participants do must meet the following steps, among others:
 ## Data
 
 The data consists of two datasets, namely:
-* [fin_data_challenge_train.csv](findata_challenge_train.csv): 100,000 rows and 126 columns (125 feature columns and 1 target column 'y')
+* [fin_data_challenge_train_1.csv](findata_challenge_train.csv): 100,000 rows and 126 columns (125 feature columns and 1 target column 'y')
 * [fin_data_challenge_test.csv](findata_challenge_test.csv): 25,000 rows and 125 columns (without target column 'y')
 
 **Column Description**<br />
