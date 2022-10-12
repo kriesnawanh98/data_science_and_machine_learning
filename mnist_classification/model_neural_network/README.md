@@ -1,9 +1,9 @@
-# Convolutional Neural Network (CNN) model for classifying skin cancer
-This CNN model is created for classifying image into 2 categories namely, benign and malignant
+# Convolutional Neural Network (CNN) model for classifying MNIST character 
+This CNN model is created for classifying image into 10 categories of MNIST character (0,1,2,3,4,5,6,7,8,9)
 
 ## 1. Preparing image data
-> - The image data such as train and test data will be stored first as a numpy array and save into .npz file for convenience.
-
+> - The image data such as train and test data will be stored first as a numpy array and save into .npz file for convenience using create_train_test.py file
+<a href="create_train_test.py">create_train_test.py</a>
 ## 2. CNN architecture
 - Before create the model, we should load the train and test data from .npz file. The X_train and X_test will be better if it is normalized (devided by 255.0) in the beginning. the image pixel will become 0-1 and the computation will become easier and faster.
 - the size of input image / input neural network is (224,224,3)
