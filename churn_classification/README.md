@@ -66,7 +66,7 @@ model5 = tf.keras.models.Sequential([
     tf.keras.layers.Dense(1, activation = 'sigmoid')
 ])
 ```
-
+In this model, adam optimizer and binary_crossentropy loss is used. The number of epochs is 20
 ```python
 model5.compile(optimizer = "adam",
              loss = 'binary_crossentropy',
@@ -76,6 +76,7 @@ model5.fit(X_train, y_train, epochs=20)
 ```
 <img src=./image/1.png>
 
+The accuracy reaches 0.9038 when test using testing data
 ```python
 model5.evaluate(X_test, y_test)
 ```
