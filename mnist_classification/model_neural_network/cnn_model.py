@@ -30,10 +30,10 @@ y_test = y_test['arr_0']
 y_test_label = np.load('y_test_label.npz')
 y_test_label = y_test_label['arr_0']
 
-print("shape of X_train_ori data = ", X_train_ori.shape)
-print("shape of y_train_ori data = ", y_train_ori.shape)
-print("shape of X_test data = ", X_test.shape)
-print("shape of y_test data = ", y_test.shape)
+# print("shape of X_train_ori data = ", X_train_ori.shape)
+# print("shape of y_train_ori data = ", y_train_ori.shape)
+# print("shape of X_test data = ", X_test.shape)
+# print("shape of y_test data = ", y_test.shape)
 
 X_train = X_train_ori[:50000, :]
 y_train = y_train_ori[:50000, :]
@@ -44,6 +44,8 @@ print("shape of X_train data = ", X_train.shape)
 print("shape of y_train data = ", y_train.shape)
 print("shape of X_val data = ", X_val.shape)
 print("shape of y_val data = ", y_val.shape)
+print("shape of X_test data = ", X_test.shape)
+print("shape of y_test data = ", y_test.shape)
 
 # architecture
 model = models.Sequential()
