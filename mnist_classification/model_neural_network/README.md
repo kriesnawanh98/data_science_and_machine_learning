@@ -8,6 +8,7 @@ This CNN model is created for classifying image into 10 categories of MNIST char
 - Before create the model, we should load the train and test data from .npz file. The X_train and X_test will be better if it is normalized (devided by 255.0) in the beginning. the image pixel will become 0-1 and the computation will become easier and faster.
 
 The train data will split into training and validating data as followed:
+
 <img src="./image/1.png">
 
 Architecture of CNN model:
