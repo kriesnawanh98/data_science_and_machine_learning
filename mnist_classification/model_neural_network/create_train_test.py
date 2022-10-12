@@ -37,7 +37,7 @@ print(n_label)
 # X_test = np.expand_dims(X_test, -1)
 # print(X_train.shape)
 # print(X_train[0].shape)
-
+y_test_label = y_test
 y_train = keras.utils.to_categorical(y_train, n_label)
 y_test = keras.utils.to_categorical(y_test, n_label)
 
@@ -47,3 +47,4 @@ np.savez_compressed('X_train.npz', X_train)
 np.savez_compressed('y_train.npz', y_train)
 np.savez_compressed('X_test.npz', X_test)
 np.savez_compressed('y_test.npz', y_test)
+np.savez_compressed('y_test_label.npz', y_test_label)
