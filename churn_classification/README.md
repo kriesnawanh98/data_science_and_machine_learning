@@ -37,3 +37,47 @@ Evaluation is done by measuring the performance of the model conducted by the pa
 The submitted file has the following format:
 1. Coding script in the form of 'complete_name-submission.ipynb'
 2. Output file name (prediction result against test data): 'complete_name-submission.csv' <br /> Columns: 'Id' and 'Predicted'. <br />Please note that file names and column names are case sensitive.
+
+
+## Machine Learning Model
+Create Neural Network Model
+| Layer   | Note                                         | Node | Activation Function |
+| ------- | -------------------------------------------- | ---- | ------------------- |
+| layer 1 | input layer                                  | 125  |                     |
+| layer 2 | hidden layer                                 | 500  | elu                 |
+| layer 3 | hidden layer                                 | 500  | relu                |
+| layer 4 | hidden layer                                 | 500  | elu                 |
+| layer 5 | dropout 20% connection between layer 4 and 5 | 0.2  |                     |
+| layer 6 | hidden layer                                 | 500  | relu                |
+| layer 7 | hidden layer                                 | 500  | elu                 |
+| layer 8 | hidden layer                                 | 500  | relu                |
+| layer 9 | output layer (0/1)                           | 1    | sigmoid             |
+
+```python
+model5 = tf.keras.models.Sequential([
+    tf.keras.layers.Flatten(input_shape=(125,)),
+    tf.keras.layers.Dense(500, activation='elu'),
+    tf.keras.layers.Dense(500, activation='relu'),
+    tf.keras.layers.Dense(500, activation='elu'),
+    tf.keras.layers.Dropout(0.2),
+    tf.keras.layers.Dense(500, activation='relu'),
+    tf.keras.layers.Dense(500, activation='elu'),
+    tf.keras.layers.Dense(500, activation='relu'),
+    tf.keras.layers.Dense(1, activation = 'sigmoid')
+])
+```
+
+```python
+model5.compile(optimizer = "adam",
+             loss = 'binary_crossentropy',
+             metrics=['accuracy'])
+
+model5.fit(X_train, y_train, epochs=20)
+```
+<img src=./image/1.png>
+
+```python
+model5.evaluate(X_test, y_test)
+```
+
+<img src=./image/2.png>
