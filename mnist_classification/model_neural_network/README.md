@@ -35,7 +35,11 @@ Based on loss and accuracy graph, we can see training process with epoch = 3 is 
 
 ## 4. Performance
 Performance based on validation data reached accuracy of 0.9884
+<p>
 <img src="./image/5.png">
+</p>
 
 Performance based on test data reached accuracy of 0.9895
+<p>
 <img src="./image/6.png">
+</p>
