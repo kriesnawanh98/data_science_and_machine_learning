@@ -17,11 +17,11 @@ X_malignant_test, y_malignant_test = convert_image_to_array(
 X_test = np.concatenate((X_benign_test, X_malignant_test), axis=0)
 y_test = np.concatenate((y_benign_test, y_malignant_test), axis=0)
 
-print(X_train.shape)
-print(y_train.shape)
-print(X_test.shape)
-print(y_test.shape)
-print(y_train)
+print("data X_train = ", X_train.shape)
+print("data y_train = ", y_train.shape)
+print("data X_test = ", X_test.shape)
+print("data y_test = ", y_test.shape)
+# print(y_train)
 
 np.savez_compressed('X_train.npz', X_train)
 np.savez_compressed('y_train.npz', y_train)
